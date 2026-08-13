@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-node';
+import adapter from '@sveltejs/adapter-vercel';
 import tailwindcss from '@tailwindcss/vite';
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
@@ -13,9 +13,12 @@ export default defineConfig({
 					filename.split(/[/\\]/).includes('node_modules') ? undefined : true
 			},
 
-			// adapter-node produces a plain Node server, so `pnpm build` works
-			// locally without depending on any hosting platform.
-			adapter: adapter()
+			// The app itself is client-side; the adapter only has to serve static
+			// assets plus the one stateless /api/fingerprint route.
+			//
+			// The runtime is pinned rather than inferred from the local Node
+			// version, so the build produces the same target on any machine.
+			adapter: adapter({ runtime: 'nodejs22.x' })
 		})
 	]
 });

@@ -30,8 +30,8 @@ Other commands:
 ```bash
 pnpm test      # unit tests (112+ tests, no browser required)
 pnpm check     # TypeScript / Svelte type checking
-pnpm build     # production build (adapter-node)
-pnpm start     # run the production build
+pnpm build     # production build
+pnpm preview   # serve the production build locally
 ```
 
 No external services, accounts, API keys, or network calls are required at any point.
