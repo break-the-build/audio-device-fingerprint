@@ -1,0 +1,33 @@
+@import 'tailwindcss';
+
+/* A dark technical palette: this is an instrument panel, not a marketing page. */
+@theme {
+	--color-ink-950: #0a0d12;
+	--color-ink-900: #10141b;
+	--color-ink-850: #151a23;
+	--color-ink-800: #1b2230;
+	--color-ink-700: #2a3446;
+	--color-ink-600: #3c4a63;
+	--color-ink-400: #7a8aa6;
+	--color-ink-300: #a4b2c8;
+	--color-ink-100: #dee5f0;
+	--color-signal: #4ade80;
+	--color-caution: #fbbf24;
+	--color-alert: #f87171;
+	--color-accent: #60a5fa;
+}
+
+html {
+	color-scheme: dark;
+}
+
+body {
+	background-color: var(--color-ink-950);
+	color: var(--color-ink-100);
+}
+
+/* Tabular figures keep columns of measurements aligned. */
+.numeric {
+	font-variant-numeric: tabular-nums;
+	font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, monospace;
+}
